@@ -3,8 +3,8 @@ const fs = require('fs');
 const path = require('path');
 
 const server = http.createServer((req, res) => {
-  if (req.url === '/') {
-    let filePath = path.join(__dirname, 'public', 'Home.html')
+  if (req.url === '/home.html') {
+    let filePath = path.join(__dirname, 'public', 'home.html')
     fs.readFile(filePath, 'utf8', (err, data) => {
       res.writeHead(200, { 'content-Type': 'text/html' })
       res.end(data);
